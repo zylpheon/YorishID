@@ -30,28 +30,28 @@
                     <a href="#testimonials"
                         class="nav-link text-navy hover:text-navy/70 transition-colors">Testimoni</a>
                 </div>
-                <button class="md:hidden text-navy" id="mobile-menu-btn">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button class="md:hidden text-navy hamburger-btn" id="mobile-menu-btn">
+                    <div class="hamburger-icon">
+                        <span class="line line-1"></span>
+                        <span class="line line-2"></span>
+                        <span class="line line-3"></span>
+                    </div>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden space-y-3 px-6 pb-4" id="mobile-menu">
-            <a href="#home" class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Beranda</a>
-            <a href="#about" class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Tentang</a>
-            <a href="#benefits"
-                class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Keuntungan</a>
-            <a href="#curriculum"
-                class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Kurikulum</a>
-            <a href="#pricing" class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Harga</a>
-            <a href="#testimonials"
-                class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Testimoni</a>
-        </div>
-        </div>
     </nav>
+
+    <!-- Mobile Menu - Dipindahkan keluar dari nav -->
+    <div class="mobile-menu-container" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#home" class="mobile-menu-link">Beranda</a>
+            <a href="#about" class="mobile-menu-link">Tentang</a>
+            <a href="#benefits" class="mobile-menu-link">Keuntungan</a>
+            <a href="#curriculum" class="mobile-menu-link">Kurikulum</a>
+            <a href="#pricing" class="mobile-menu-link">Harga</a>
+            <a href="#testimonials" class="mobile-menu-link">Testimoni</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-20">
@@ -80,6 +80,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Gradient separator: Cream -> Navy -->
+    <div class="separator sep-cream-to-navy" aria-hidden="true"></div>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-navy">
@@ -111,6 +114,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Gradient separator: Navy -> Cream -->
+    <div class="separator sep-navy-to-cream" aria-hidden="true"></div>
 
     <!-- Benefits Section -->
     <section id="benefits" class="py-20">
@@ -148,6 +154,9 @@
         </div>
     </section>
 
+    <!-- Gradient separator: Cream -> Navy -->
+    <div class="separator sep-cream-to-navy" aria-hidden="true"></div>
+
     <!-- Curriculum Section -->
     <section id="curriculum" class="py-20 bg-navy">
         <div class="container mx-auto px-6">
@@ -184,6 +193,9 @@
         </div>
     </section>
 
+    <!-- Gradient separator: Navy -> Cream -->
+    <div class="separator sep-navy-to-cream" aria-hidden="true"></div>
+
     <!-- Pricing Section -->
     <section id="pricing" class="py-20">
         <div class="container mx-auto px-6">
@@ -204,8 +216,6 @@
                             Paket</button>
                     </div>
                     <div class="bg-navy text-cream p-8 rounded-2xl transform scale-105 border-4 border-cream fade-in">
-                        <div class="bg-cream text-navy px-4 py-1 rounded-full text-sm font-bold inline-block mb-4">
-                            TERPOPULER</div>
                         <h3 class="text-2xl font-bold mb-4">Paket Premium</h3>
                         <div class="text-4xl font-bold mb-6">Rp XXX.XXX</div>
                         <ul class="space-y-3 mb-8">
@@ -241,6 +251,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Gradient separator: Cream -> Navy -->
+    <div class="separator sep-cream-to-navy" aria-hidden="true"></div>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-navy">
@@ -299,8 +312,11 @@
         </div>
     </section>
 
+    <!-- Gradient separator: Navy -> Cream -->
+    <div class="separator sep-navy-to-cream" aria-hidden="true"></div>
+
     <!-- CTA Section -->
-    <section class="py-20">
+    <section class="pt-20">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center bg-navy text-cream p-12 rounded-3xl fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Ini saatnya upgrade level!</h2>
@@ -331,6 +347,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Gradient separator: Cream -> Navy -->
+    <div class="separator sep-cream-to-navy" aria-hidden="true"></div>
 
     <!-- Footer -->
     <footer class="bg-navy text-cream py-8">
