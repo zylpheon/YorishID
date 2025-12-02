@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YORISHID - Creator Global dari Rumah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body class="bg-cream">
+    <!-- Overlay for mobile menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-cream shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 h-20 flex items-center">
+            <div class="flex items-center justify-between w-full">
+                <div class="flex items-center space-x-3">
+                    <img src="./images/logo.jpg" alt="Yorishid Logo" class="h-12 w-12 rounded-lg object-cover logo-img">
+                    <span class="text-2xl font-bold text-navy brand-text">YORISHID</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-navy hover:text-navy/70 transition-colors">Beranda</a>
+                    <a href="#about" class="nav-link text-navy hover:text-navy/70 transition-colors">Tentang</a>
+                    <a href="#benefits" class="nav-link text-navy hover:text-navy/70 transition-colors">Keuntungan</a>
+                    <a href="#curriculum" class="nav-link text-navy hover:text-navy/70 transition-colors">Kurikulum</a>
+                    <a href="#pricing" class="nav-link text-navy hover:text-navy/70 transition-colors">Harga</a>
+                    <a href="#testimonials"
+                        class="nav-link text-navy hover:text-navy/70 transition-colors">Testimoni</a>
+                </div>
+                <button class="md:hidden text-navy" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden space-y-3 px-6 pb-4" id="mobile-menu">
+            <a href="#home" class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Beranda</a>
+            <a href="#about" class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Tentang</a>
+            <a href="#benefits"
+                class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Keuntungan</a>
+            <a href="#curriculum"
+                class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Kurikulum</a>
+            <a href="#pricing" class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Harga</a>
+            <a href="#testimonials"
+                class="block nav-link text-navy hover:text-navy/70 transition-colors py-2">Testimoni</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-navy mb-6 leading-tight">
+                    NGONTEN HANYA DI RUMAH…<br>
+                    <span class="text-navy/80">TAPI TARGET PENONTON BULE?</span>
+                </h1>
+                <p class="text-2xl md:text-3xl text-navy/90 mb-8 font-semibold">
+                    PENGHASILAN BISA MELEDAK<br>
+                    <span class="text-4xl md:text-5xl">10X LIPAT</span><br>
+                    DIBANDING PENONTON INDONESIA! 🔥
+                </p>
+                <div class="bg-navy text-cream p-8 rounded-2xl mb-8 shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4">STOP TERBATAS DI PASAR LOKAL!</h2>
+                    <p class="text-lg leading-relaxed">
+                        Saatnya buka mata: konten yang ditonton bule punya RPM jauh lebih tinggi, dan potensi cuannya
+                        luar biasa besar!
+                    </p>
+                </div>
+                <button
+                    class="bg-navy text-cream px-12 py-4 rounded-full text-xl font-bold hover:bg-navy/90 transition-all transform hover:scale-105 shadow-lg">
+                    DAFTAR SEKARANG
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-navy">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-cream mb-12">Bayangkan...</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-cream p-8 rounded-2xl">
+                        <div class="text-4xl mb-4">📌</div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Ngonten Sederhana</h3>
+                        <p class="text-navy/80">Dari rumah</p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-2xl">
+                        <div class="text-4xl mb-4">📌</div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Penonton Internasional</h3>
+                        <p class="text-navy/80">Yang loyal</p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-2xl">
+                        <div class="text-4xl mb-4">📌</div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Penghasilan Meledak</h3>
+                        <p class="text-navy/80">Berkali-kali lipat</p>
+                    </div>
+                </div>
+                <p class="text-2xl text-cream mt-12 leading-relaxed">
+                    Mulai sekarang, jangan hanya jadi penonton—jadilah <span class="font-bold">CREATOR
+                        global!</span><br>
+                    Dari ruangan kecilmu, kamu bisa menjangkau dunia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-navy text-center mb-16 fade-in">Bergabunglah dan Pelajari
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-navy text-cream p-8 rounded-2xl fade-in">
+                        <div class="text-3xl mb-4">✨</div>
+                        <h3 class="text-2xl font-bold mb-4">Belajar dari ZERO hingga jadi HERO</h3>
+                        <p class="text-cream/90 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="bg-navy text-cream p-8 rounded-2xl fade-in">
+                        <div class="text-3xl mb-4">✨</div>
+                        <h3 class="text-2xl font-bold mb-4">Strategi Konten Internasional</h3>
+                        <p class="text-cream/90 leading-relaxed">Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="bg-navy text-cream p-8 rounded-2xl fade-in">
+                        <div class="text-3xl mb-4">✨</div>
+                        <h3 class="text-2xl font-bold mb-4">Formula Rahasia CEPAT Monetisasi</h3>
+                        <p class="text-cream/90 leading-relaxed">Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="bg-navy text-cream p-8 rounded-2xl fade-in">
+                        <div class="text-3xl mb-4">✨</div>
+                        <h3 class="text-2xl font-bold mb-4">Menarik Penonton Bule</h3>
+                        <p class="text-cream/90 leading-relaxed">Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-20 bg-navy">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-cream text-center mb-16 fade-in">Kurikulum Lengkap</h2>
+                <div class="space-y-6">
+                    <div class="bg-cream p-6 rounded-xl fade-in">
+                        <h3 class="text-xl font-bold text-navy mb-2">Modul 1: Lorem Ipsum Dolor</h3>
+                        <p class="text-navy/80">Sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                            labore.</p>
+                    </div>
+                    <div class="bg-cream p-6 rounded-xl fade-in">
+                        <h3 class="text-xl font-bold text-navy mb-2">Modul 2: Ut Enim Ad Minim</h3>
+                        <p class="text-navy/80">Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo.</p>
+                    </div>
+                    <div class="bg-cream p-6 rounded-xl fade-in">
+                        <h3 class="text-xl font-bold text-navy mb-2">Modul 3: Duis Aute Irure</h3>
+                        <p class="text-navy/80">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                            nulla.</p>
+                    </div>
+                    <div class="bg-cream p-6 rounded-xl fade-in">
+                        <h3 class="text-xl font-bold text-navy mb-2">Modul 4: Excepteur Sint Occaecat</h3>
+                        <p class="text-navy/80">Cupidatat non proident sunt in culpa qui officia deserunt mollit anim id
+                            est.</p>
+                    </div>
+                    <div class="bg-cream p-6 rounded-xl fade-in">
+                        <h3 class="text-xl font-bold text-navy mb-2">Modul 5: Sed Ut Perspiciatis</h3>
+                        <p class="text-navy/80">Unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-navy text-center mb-16 fade-in">Paket Investasi</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-navy text-cream p-8 rounded-2xl fade-in">
+                        <h3 class="text-2xl font-bold mb-4">Paket Basic</h3>
+                        <div class="text-4xl font-bold mb-6">Rp XXX.XXX</div>
+                        <ul class="space-y-3 mb-8">
+                            <li>✓ Lorem ipsum dolor</li>
+                            <li>✓ Sit amet consectetur</li>
+                            <li>✓ Adipiscing elit sed</li>
+                            <li>✓ Do eiusmod tempor</li>
+                        </ul>
+                        <button
+                            class="w-full bg-cream text-navy py-3 rounded-full font-bold hover:bg-cream/90 transition-all">Pilih
+                            Paket</button>
+                    </div>
+                    <div class="bg-navy text-cream p-8 rounded-2xl transform scale-105 border-4 border-cream fade-in">
+                        <div class="bg-cream text-navy px-4 py-1 rounded-full text-sm font-bold inline-block mb-4">
+                            TERPOPULER</div>
+                        <h3 class="text-2xl font-bold mb-4">Paket Premium</h3>
+                        <div class="text-4xl font-bold mb-6">Rp XXX.XXX</div>
+                        <ul class="space-y-3 mb-8">
+                            <li>✓ Lorem ipsum dolor</li>
+                            <li>✓ Sit amet consectetur</li>
+                            <li>✓ Adipiscing elit sed</li>
+                            <li>✓ Do eiusmod tempor</li>
+                            <li>✓ Incididunt ut labore</li>
+                            <li>✓ Et dolore magna</li>
+                        </ul>
+                        <button
+                            class="w-full bg-cream text-navy py-3 rounded-full font-bold hover:bg-cream/90 transition-all">Pilih
+                            Paket</button>
+                    </div>
+                    <div class="bg-navy text-cream p-8 rounded-2xl fade-in">
+                        <h3 class="text-2xl font-bold mb-4">Paket VIP</h3>
+                        <div class="text-4xl font-bold mb-6">Rp XXX.XXX</div>
+                        <ul class="space-y-3 mb-8">
+                            <li>✓ Lorem ipsum dolor</li>
+                            <li>✓ Sit amet consectetur</li>
+                            <li>✓ Adipiscing elit sed</li>
+                            <li>✓ Do eiusmod tempor</li>
+                            <li>✓ Incididunt ut labore</li>
+                            <li>✓ Et dolore magna</li>
+                            <li>✓ Aliqua ut enim</li>
+                            <li>✓ Ad minim veniam</li>
+                        </ul>
+                        <button
+                            class="w-full bg-cream text-navy py-3 rounded-full font-bold hover:bg-cream/90 transition-all">Pilih
+                            Paket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-navy">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-cream text-center mb-16 fade-in">Kata Mereka</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-cream p-8 rounded-2xl fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-navy rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-navy">John Doe</h4>
+                                <p class="text-navy/70 text-sm">Creator Global</p>
+                            </div>
+                        </div>
+                        <p class="text-navy/90 leading-relaxed">"Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam."</p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-2xl fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-navy rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-navy">Jane Smith</h4>
+                                <p class="text-navy/70 text-sm">Content Creator</p>
+                            </div>
+                        </div>
+                        <p class="text-navy/90 leading-relaxed">"Quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit."
+                        </p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-2xl fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-navy rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-navy">Ahmad Rahman</h4>
+                                <p class="text-navy/70 text-sm">YouTuber</p>
+                            </div>
+                        </div>
+                        <p class="text-navy/90 leading-relaxed">"Esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt."</p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-2xl fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-navy rounded-full mr-4"></div>
+                            <div>
+                                <h4 class="font-bold text-navy">Sarah Lee</h4>
+                                <p class="text-navy/70 text-sm">Digital Creator</p>
+                            </div>
+                        </div>
+                        <p class="text-navy/90 leading-relaxed">"Mollit anim id est laborum. Sed ut perspiciatis unde
+                            omnis iste natus error sit voluptatem accusantium doloremque laudantium."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center bg-navy text-cream p-12 rounded-3xl fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ini saatnya upgrade level!</h2>
+                <p class="text-xl mb-8 leading-relaxed">
+                    Tembus pasar luar negeri, dan rasakan cuan yang benar-benar terasa!<br>
+                    Mulai sekarang… perjalanan menuju <span class="font-bold">Creator Global</span> dimulai! 🚀🔥
+                </p>
+                <button
+                    class="bg-cream text-navy px-12 py-4 rounded-full text-xl font-bold hover:bg-cream/90 transition-all transform hover:scale-105 shadow-lg">
+                    DAFTAR (HANYA YANG NIAT DAN BERMINAT SAJA)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="py-12 bg-navy/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold text-navy mb-4 text-center">Disclaimer</h3>
+                <p class="text-navy/80 text-sm leading-relaxed text-center">
+                    Dengan mengikuti kelas online Kami, Anda memahami dan menyetujui bahwa:
+                    Tidak ada jaminan bahwa Anda akan memperoleh penghasilan secara instan atau Banyak Uang Secara
+                    Instan.
+                    Keberhasilan tergantung pada kerja keras Anda, ketekunan, dan rezeki dari Tuhan Yang Maha Esa.
+                    Mohon pikirkan matang-matang sebelum mendaftar; Karna Tidak Ada Garansi Uang Kembali.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-cream py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p class="text-2xl font-bold mb-2">YORISHID</p>
+                <p class="text-cream/70">© 2024 Yorishid. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
