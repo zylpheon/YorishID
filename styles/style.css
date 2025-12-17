@@ -1,10 +1,8 @@
-/* Custom Colors */
 :root {
     --cream: #f6f3ec;
     --navy: #002645;
 }
 
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +34,6 @@ body {
     color: var(--navy);
 }
 
-/* Navbar Scroll Effect */
 #navbar {
     background-color: var(--cream) !important;
     height: 80px;
@@ -47,7 +44,6 @@ body {
     background-color: var(--cream) !important;
 }
 
-/* Nav Link Underline Animation */
 .nav-link {
     position: relative;
     display: inline-block;
@@ -69,7 +65,6 @@ body {
     width: 100%;
 }
 
-/* Logo Animation */
 .logo-img {
     transition: transform 0.3s ease;
 }
@@ -78,7 +73,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Brand Text Underline Animation */
 .brand-text {
     position: relative;
     display: inline-block;
@@ -100,7 +94,6 @@ body {
     width: 100%;
 }
 
-/* Hamburger Menu Animation */
 .hamburger-btn {
     width: 40px;
     height: 40px;
@@ -156,7 +149,6 @@ body {
     transform: translateY(0) rotate(0);
 }
 
-/* Hamburger Active State (X) */
 .hamburger-btn.active .line-1 {
     transform: translateY(8.5px) rotate(45deg);
 }
@@ -170,7 +162,6 @@ body {
     transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* Mobile Menu - Fixed positioning */
 .mobile-menu-container {
     position: fixed;
     top: 80px;
@@ -215,7 +206,6 @@ body {
     background-color: rgba(0, 38, 69, 0.05);
 }
 
-/* Overlay for mobile menu */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -234,7 +224,6 @@ body {
     visibility: visible;
 }
 
-/* Fade In Animation */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -246,13 +235,11 @@ body {
     transform: translateY(0);
 }
 
-/* Smooth Transitions */
 a,
 button {
     transition: all 0.3s ease;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -270,7 +257,6 @@ button {
     background: #003d6b;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem !important;
@@ -289,34 +275,32 @@ button {
     }
 }
 
-/* Hide mobile menu on desktop */
 @media (min-width: 768px) {
     .mobile-menu-container {
         display: none;
     }
 }
 
-/*
- * Separator / Gradient transition div between sections
- * Usage:
- *  - Add: <div class="separator" style="--from: var(--cream); --to: var(--navy);"></div>
- *  - You can use predefined helpers: .sep-cream-to-navy or .sep-navy-to-cream
- *  - Change height: <div class="separator" style="--separator-height: 80px; --from: #fff; --to: #000;"></div>
- */
 .separator {
     --from: transparent;
     --to: transparent;
-    --separator-height: clamp(48px, 6vh, 120px); /* responsive height */
+    --separator-height: clamp(48px, 6vh, 120px);
     height: var(--separator-height);
     min-height: 48px;
     inline-size: 100%;
     background: linear-gradient(180deg, var(--from) 0%, var(--from) 60%, var(--to) 100%);
-    pointer-events: none; /* doesn't block interactions */
+    pointer-events: none;
     transition: background 0.3s ease, height 0.3s ease;
-    display:block;
+    display: block;
     margin: 0;
 }
 
-/* Helpful convenience classes using root colors */
-.sep-cream-to-navy { --from: var(--cream); --to: var(--navy); }
-.sep-navy-to-cream { --from: var(--navy); --to: var(--cream); }
+.sep-cream-to-navy {
+    --from: var(--cream);
+    --to: var(--navy);
+}
+
+.sep-navy-to-cream {
+    --from: var(--navy);
+    --to: var(--cream);
+}
