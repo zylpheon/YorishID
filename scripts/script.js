@@ -112,3 +112,4 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+lucide.createIcons();

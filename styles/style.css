@@ -304,3 +304,13 @@ button {
     --from: var(--navy);
     --to: var(--cream);
 }
+
+.icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container i {
+    stroke-width: 2;
+}
