@@ -1,6 +1,7 @@
 :root {
     --cream: #f6f3ec;
     --navy: #002645;
+    --light-navy: #003d6b;
 }
 
 * {
@@ -224,17 +225,6 @@ body {
     visibility: visible;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 a,
 button {
     transition: all 0.3s ease;
@@ -279,6 +269,10 @@ button {
     .mobile-menu-container {
         display: none;
     }
+
+    .hamburger-btn {
+        display: none !important;
+    }
 }
 
 .separator {
@@ -297,11 +291,11 @@ button {
 
 .sep-cream-to-navy {
     --from: var(--cream);
-    --to: var(--navy);
+    --to: var(--light-navy);
 }
 
 .sep-navy-to-cream {
-    --from: var(--navy);
+    --from: var(--light-navy);
     --to: var(--cream);
 }
 
@@ -313,4 +307,100 @@ button {
 
 .icon-container i {
     stroke-width: 2;
+}
+
+.bg-navy {
+    background-color: var(--light-navy);
+}
+
+.glass-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 38, 69, 0.15);
+}
+
+.glass-card-dark {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hover-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 38, 69, 0.3);
+}
+
+.hover-card:hover::before {
+    left: 100%;
+}
+
+#scroll-progress {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #002645, #00a8e8, #002645);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.counter {
+    display: inline-block;
+}
+
+.icon-glow {
+    filter: drop-shadow(0 0 8px rgba(0, 166, 232, 0.5));
+    transition: filter 0.3s ease;
+}
+
+.hover-card:hover .icon-glow {
+    filter: drop-shadow(0 0 15px rgba(0, 166, 232, 0.8));
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse-on-hover:hover {
+    animation: pulse 1s ease-in-out infinite;
 }

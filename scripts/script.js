@@ -68,17 +68,42 @@ menuOverlay.addEventListener('click', () => {
         closeMobileMenu();
     }
 });
+const progressBar = document.createElement('div');
+progressBar.id = 'scroll-progress';
+document.body.appendChild(progressBar);
+function updateProgressBar() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrolled = window.scrollY;
+    const progress = (scrolled / documentHeight) * 100;
+    progressBar.style.width = progress + '%';
+}
 let lastScroll = 0;
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
+function handleScroll() {
     const currentScroll = window.pageYOffset;
     if (currentScroll > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
+    updateProgressBar();
     lastScroll = currentScroll;
-});
+}
+window.addEventListener('scroll', handleScroll, { passive: true });
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toLocaleString('id-ID');
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString('id-ID');
+        }
+    }, 16);
+}
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -86,16 +111,23 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            if (entry.target.classList.contains('counter-trigger')) {
+                const counter = entry.target.querySelector('.counter');
+                if (counter && !counter.dataset.animated) {
+                    counter.dataset.animated = 'true';
+                    const target = parseInt(counter.dataset.target);
+                    animateCounter(counter, target);
+                }
+            }
         }
     });
 }, observerOptions);
-document.querySelectorAll('.fade-in').forEach(element => {
+document.querySelectorAll('.counter-trigger').forEach(element => {
     observer.observe(element);
 });
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
-window.addEventListener('scroll', () => {
+function updateActiveLink() {
     let current = '';
     const scrollPosition = window.pageYOffset;
     sections.forEach(section => {
@@ -111,5 +143,10 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
-});
+}
+window.addEventListener('scroll', updateActiveLink, { passive: true });
 lucide.createIcons();
+window.addEventListener('load', () => {
+    updateProgressBar();
+    updateActiveLink();
+});
