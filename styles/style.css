@@ -4,6 +4,16 @@
     --light-navy: #003d6b;
 }
 
+.loading {
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -403,4 +413,22 @@ button {
 
 .pulse-on-hover:hover {
     animation: pulse 1s ease-in-out infinite;
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 640px) {
+    /* Teks hero lebih kecil */
+    h1 { font-size: 1.875rem !important; }
+    
+    /* Padding lebih kecil di mobile */
+    .container { padding-left: 1rem; padding-right: 1rem; }
+    
+    /* Card spacing lebih rapat */
+    .grid { gap: 1rem; }
+}
+
+/* Touch-friendly buttons */
+button, a {
+    min-height: 44px;
+    min-width: 44px;
 }

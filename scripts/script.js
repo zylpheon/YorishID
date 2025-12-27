@@ -1,34 +1,63 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (isAnimating) return;
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const navHeight = 80;
-            const targetPosition = target.offsetTop - navHeight;
-            const isMobileMenuOpen = mobileMenu.classList.contains('open');
-            if (isMobileMenuOpen) {
-                closeMobileMenu();
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }, 0);
-            } else {
+// ===== CONFIG =====
+const CONFIG = {
+    navHeight: 80,
+    animationDuration: 500,
+    counterDuration: 2000
+};
+
+// ===== SMOOTH SCROLL =====
+const initSmoothScroll = () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', handleSmoothScroll);
+    });
+};
+
+const handleSmoothScroll = function (e) {
+    e.preventDefault();
+    if (isAnimating) return;
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+        const targetPosition = target.offsetTop - CONFIG.navHeight;
+        const isMobileMenuOpen = mobileMenu.classList.contains('open');
+        if (isMobileMenuOpen) {
+            closeMobileMenu();
+            setTimeout(() => {
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-            }
+            }, 0);
+        } else {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
         }
-    });
-});
+    }
+};
+
+// ===== MOBILE MENU =====
+let isAnimating = false;
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuOverlay = document.getElementById('menu-overlay');
-let isAnimating = false;
-function openMobileMenu() {
+
+const initMobileMenu = () => {
+    mobileMenuBtn?.addEventListener('click', toggleMenu);
+    menuOverlay?.addEventListener('click', closeMenu);
+};
+
+const toggleMenu = (e) => {
+    e.preventDefault();
+    if (isAnimating) return;
+    if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+};
+
+const openMobileMenu = () => {
     if (isAnimating) return;
     isAnimating = true;
     mobileMenuBtn.classList.add('disabled');
@@ -39,9 +68,16 @@ function openMobileMenu() {
     setTimeout(() => {
         isAnimating = false;
         mobileMenuBtn.classList.remove('disabled');
-    }, 500);
-}
-function closeMobileMenu() {
+    }, CONFIG.animationDuration);
+};
+
+const closeMenu = () => {
+    if (!isAnimating) {
+        closeMobileMenu();
+    }
+};
+
+const closeMobileMenu = () => {
     if (isAnimating) return;
     isAnimating = true;
     mobileMenuBtn.classList.add('disabled');
@@ -52,82 +88,48 @@ function closeMobileMenu() {
     setTimeout(() => {
         isAnimating = false;
         mobileMenuBtn.classList.remove('disabled');
-    }, 500);
-}
-mobileMenuBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (isAnimating) return;
-    if (mobileMenu.classList.contains('open')) {
-        closeMobileMenu();
-    } else {
-        openMobileMenu();
-    }
-});
-menuOverlay.addEventListener('click', () => {
-    if (!isAnimating) {
-        closeMobileMenu();
-    }
-});
+    }, CONFIG.animationDuration);
+};
+
+// ===== SCROLL EFFECTS =====
 const progressBar = document.createElement('div');
 progressBar.id = 'scroll-progress';
 document.body.appendChild(progressBar);
-function updateProgressBar() {
+
+const initScrollEffects = () => {
+    window.addEventListener('scroll', () => {
+        updateProgressBar();
+        updateNavbar();
+        updateActiveLink();
+    }, { passive: true });
+};
+
+const updateProgressBar = () => {
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight - windowHeight;
     const scrolled = window.scrollY;
     const progress = (scrolled / documentHeight) * 100;
     progressBar.style.width = progress + '%';
-}
+};
+
 let lastScroll = 0;
 const navbar = document.getElementById('navbar');
-function handleScroll() {
+
+const updateNavbar = () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    updateProgressBar();
     lastScroll = currentScroll;
-}
-window.addEventListener('scroll', handleScroll, { passive: true });
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target.toLocaleString('id-ID');
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start).toLocaleString('id-ID');
-        }
-    }, 16);
-}
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (entry.target.classList.contains('counter-trigger')) {
-                const counter = entry.target.querySelector('.counter');
-                if (counter && !counter.dataset.animated) {
-                    counter.dataset.animated = 'true';
-                    const target = parseInt(counter.dataset.target);
-                    animateCounter(counter, target);
-                }
-            }
-        }
-    });
-}, observerOptions);
-document.querySelectorAll('.counter-trigger').forEach(element => {
-    observer.observe(element);
-});
+
+// ===== ACTIVE LINK UPDATE =====
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
-function updateActiveLink() {
+
+const updateActiveLink = () => {
     let current = '';
     const scrollPosition = window.pageYOffset;
     sections.forEach(section => {
@@ -143,10 +145,73 @@ function updateActiveLink() {
             link.classList.add('active');
         }
     });
+};
+
+// ===== COUNTER ANIMATION =====
+const animateCounter = (element, target, duration = CONFIG.counterDuration) => {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toLocaleString('id-ID');
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString('id-ID');
+        }
+    }, 16);
+};
+
+const handleCounterIntersection = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target.querySelector('.counter');
+            if (counter && !counter.dataset.animated) {
+                counter.dataset.animated = 'true';
+                const target = parseInt(counter.dataset.target);
+                animateCounter(counter, target);
+            }
+        }
+    });
+};
+
+// ===== OBSERVERS =====
+const initObservers = () => {
+    const counterObserver = new IntersectionObserver(
+        handleCounterIntersection,
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.counter-trigger').forEach(el => {
+        counterObserver.observe(el);
+    });
+};
+
+// ===== INIT =====
+const init = () => {
+    initSmoothScroll();
+    initMobileMenu();
+    initScrollEffects();
+    initObservers();
+    lucide.createIcons();
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+
+    // Hide loading after init
+    setTimeout(() => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+            loading.style.display = 'none';
+        }
+    }, 100);
+};
+
+// Run when DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
 }
-window.addEventListener('scroll', updateActiveLink, { passive: true });
-lucide.createIcons();
-window.addEventListener('load', () => {
-    updateProgressBar();
-    updateActiveLink();
-});

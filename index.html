@@ -4,25 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YorishID Academy</title>
-    <meta name="description"
-        content="Saatnya Menjadi Creator YouTube! Mulai Dari Sekarang! Kelas Online YouTube Yorishid Academy. Akses Lifetime Rp 750.000">
-    <meta name="keywords"
-        content="Yorishid Academy, Kelas YouTube, Belajar YouTube, Jadi Youtuber, Kursus YouTube, Monetisasi YouTube, Strategi YouTube">
+    <title>Kelas Online YouTube - YorishID Academy | Belajar Jadi Creator dari Nol</title>
+    <meta name="description" content="Kelas Online YouTube YorishID Academy - Belajar menjadi creator YouTube dari nol hingga mahir. Materi lengkap A-Z, akses lifetime Rp 750.000. Cocok untuk pemula & yang ingin naik level!">
+    <meta name="keywords" content="Yorishid Academy, Kelas YouTube, Belajar YouTube, Jadi Youtuber, Kursus YouTube, Monetisasi YouTube, Strategi YouTube">
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://wa.me">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kelas Online YouTube - YorishID Academy">
+    <meta property="og:description" content="Saatnya Menjadi Creator YouTube! Akses Lifetime Rp 750.000">
+    <meta property="og:image" content="./images/logo.jpg">
+    <meta property="og:url" content="https://yorishidacademy.com/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kelas Online YouTube - YorishID Academy">
+    <meta name="twitter:description" content="Belajar YouTube dari Nol hingga Mahir">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Kelas Online YouTube - YorishID Academy",
+      "description": "Kelas lengkap belajar menjadi creator YouTube dari nol hingga mahir",
+      "provider": {
+        "@type": "Organization",
+        "name": "YorishID Academy"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "750000",
+        "priceCurrency": "IDR"
+      }
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body class="bg-cream">
+    <div id="loading" class="loading">
+        <div class="text-navy text-xl font-bold">Loading...</div>
+    </div>
     <div class="menu-overlay" id="menu-overlay"></div>
     <nav class="fixed top-0 w-full bg-cream shadow-sm z-50 transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 h-20 flex items-center">
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="100">
-                    <img src="./images/logo.jpg" alt="Yorishid Logo" class="h-12 w-12 rounded-lg object-cover logo-img">
+                    <img src="./images/logo.jpg" alt="Logo YorishID Academy - Kelas Online YouTube" class="h-12 w-12 rounded-lg object-cover logo-img" width="48" height="48">
                     <span class="text-2xl font-bold text-navy brand-text">YORISHID</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
@@ -89,43 +126,43 @@
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-12" data-aos="fade-up">🚀 Cocok Untuk...</h2>
                 <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="100">
+                    <article class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="target" class="text-navy" style="width: 48px; height: 48px;"></i>
                         </div>
                         <h3 class="text-xl font-bold text-navy mb-3">Pemula dari Nol</h3>
                         <p class="text-navy/80">Mulai dari awal tanpa pengalaman</p>
-                    </div>
-                    <div class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="200">
+                    </article>
+                    <article class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="trending-up" class="text-navy" style="width: 48px; height: 48px;"></i>
                         </div>
                         <h3 class="text-xl font-bold text-navy mb-3">Creator Naik Level</h3>
                         <p class="text-navy/80">Tingkatkan skill & penghasilan</p>
-                    </div>
-                    <div class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="300">
+                    </article>
+                    <article class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="globe" class="text-navy" style="width: 48px; height: 48px;"></i>
                         </div>
                         <h3 class="text-xl font-bold text-navy mb-3">Market Luar Negeri</h3>
                         <p class="text-navy/80">Fokus RPM tinggi & pasar global</p>
-                    </div>
+                    </article>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="400">
+                    <article class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="dollar-sign" class="text-navy" style="width: 48px; height: 48px;"></i>
                         </div>
                         <h3 class="text-xl font-bold text-navy mb-3">Penghasilan Stabil</h3>
                         <p class="text-navy/80">Strategi monetisasi yang efektif</p>
-                    </div>
-                    <div class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="500">
+                    </article>
+                    <article class="bg-cream p-8 rounded-2xl hover-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="smartphone" class="text-navy" style="width: 48px; height: 48px;"></i>
                         </div>
                         <h3 class="text-xl font-bold text-navy mb-3">Modal HP/PC/Laptop</h3>
                         <p class="text-navy/80">Ubah device jadi mesin penghasil uang</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -138,70 +175,70 @@
                     Dapatkan
                 </h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="100">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="video" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Materi Lengkap A–Z dalam Bentuk Video</h3>
                         <p class="text-cream/90 leading-relaxed">Semua dibahas detail dan mudah dipahami</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="200">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="zap" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Strategi Real & Bisa Langsung Dipraktekkan</h3>
                         <p class="text-cream/90 leading-relaxed">Terbukti berhasil dan siap diaplikasikan</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="300">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="target" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Teknik Riset Judul & Thumbnail RPM Tinggi</h3>
                         <p class="text-cream/90 leading-relaxed">Keyword yang jitu untuk hasil maksimal</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="400">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="film" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Mulai dari Ide Konten, Cara Editing Video</h3>
                         <p class="text-cream/90 leading-relaxed">Panduan lengkap produksi konten berkualitas</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="400">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="bot" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Cara Membuat Prompt AI</h3>
                         <p class="text-cream/90 leading-relaxed">Gambar & musik sesuai keinginan dengan AI</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="500">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="bar-chart-3" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Optimasi Channel, Video, Algoritma & Monetisasi</h3>
                         <p class="text-cream/90 leading-relaxed">Maksimalkan performa dan penghasilan</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="600">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="infinity" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Akses Seumur Hidup</h3>
                         <p class="text-cream/90 leading-relaxed">Bisa diulang kapan saja tanpa batas waktu</p>
-                    </div>
-                    <div class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
+                    </article>
+                    <article class="bg-navy text-cream p-8 rounded-2xl hover-card glass-card" data-aos="fade-up"
                         data-aos-delay="700">
                         <div class="icon-container mb-4 icon-glow">
                             <i data-lucide="gift" class="text-cream" style="width: 40px; height: 40px;"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Free Tools Youtuber</h3>
                         <p class="text-cream/90 leading-relaxed">Overlay ASMR/Relaxing & Grup WA Sharing Member</p>
-                    </div>
+                    </article>
                 </div>
                 <div class="mt-8 bg-navy text-cream p-8 rounded-2xl text-center hover-card glass-card"
                     data-aos="fade-up" data-aos-delay="800">
@@ -349,7 +386,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center">
                 <div class="flex items-center justify-center space-x-3 mb-4">
-                    <img src="./images/logo.jpg" alt="Yorishid Logo" class="h-12 w-12 rounded-lg object-cover">
+                    <img src="./images/logo.jpg" alt="Logo YorishID Academy - Kelas Online YouTube" class="h-12 w-12 rounded-lg object-cover" width="48" height="48">
                     <p class="text-2xl font-bold">YORISHID ACADEMY</p>
                 </div>
                 <p class="text-cream/70 mb-2">Kelas Online YouTube - Saatnya Menjadi Creator YouTube! Mulai Dari
@@ -360,14 +397,9 @@
     </footer>
     <script src="./scripts/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out',
-            once: true,
-            offset: 100
-        });
-    </script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="./scripts/script.js"></script>
 </body>
 
 </html>
